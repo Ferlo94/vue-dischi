@@ -1,9 +1,9 @@
 <template>
-    <div class="character">
-        <img src="https://images.agi.it/pictures/agi/agi/2021/04/22/213505783-2288da7e-bc71-4ffb-8227-9dcef7ca968a.png" alt="">
-        <h6 class="titolo">TITOLO SONG</h6>
-        <p class="autore">autore</p>
-        <p class="data">data</p>
+    <div class="character-card">
+        <img :src="character.poster" :alt="character.title">
+        <h6 class="titolo">{{character.title}}</h6>
+        <p class="autore">{{character.author}}</p>
+        <p class="year">{{character.year}}</p>
     </div>
 </template>
 
@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-.character {
+.character-card {
     text-align: center;
     background-color: #2e3a46;
     margin: 5px;
@@ -30,6 +30,7 @@ export default {
     h6 {
         color: white;
     }
+
     p {
         color: grey;
     }

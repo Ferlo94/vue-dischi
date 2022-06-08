@@ -2,7 +2,7 @@
     <section>
         <div class="container">
             <div class="row">
-                <CardCharacter class="col-12 col-sm-6 col-lg-3" v-for="(character, index) in characters" :key="index"/>
+                <CardCharacter class="col-12 col-sm-6 col-lg-3" v-for="(character, index) in characters" :key="index" :character="character"/>
 
             </div>
         </div>
@@ -29,7 +29,8 @@ export default {
 
         .then((response) => {
             // handle success
-            this.characters = response.data;
+            this.characters = response.data.response;
+            
         })
 
         .catch((error) => {
